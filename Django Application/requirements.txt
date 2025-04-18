@@ -1,3 +1,6 @@
+
+dotenv
+groq
 altair
 asgiref
 astor
