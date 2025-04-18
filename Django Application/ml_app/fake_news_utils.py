@@ -1,9 +1,14 @@
 from groq import Groq
 import requests
+from dotenv import load_dotenv
+import os
 
-# Hardcoded API keys
-client = Groq(api_key="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")
-NEWS_API_KEY = "52e33b0ac1f54adeb5e94e71c8bfce7e"
+# Load environment variables from .env file
+load_dotenv()
+
+# API keys from environment variables
+client = Groq(api_key=os.getenv("GROQ_API_KEY"))
+NEWS_API_KEY = os.getenv("NEWS_API_KEY")
 
 def analyze_news_with_llm(news):
     response = client.chat.completions.create(
