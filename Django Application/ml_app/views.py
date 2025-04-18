@@ -23,6 +23,10 @@ import time
 from django.conf import settings
 from .forms import VideoUploadForm
 
+from .fake_news_utils import detect_fake_news
+from .forms import NewsForm
+
+
 index_template_name = 'index.html'
 predict_template_name = 'predict.html'
 about_template_name = "about.html"
@@ -390,3 +394,16 @@ def handler404(request,exception):
     return render(request, '404.html', status=404)
 def cuda_full(request):
     return render(request, 'cuda_full.html')
+
+
+def fake_news_checker(request):
+    result = None
+    if request.method == "POST":
+        form = NewsForm(request.POST)
+        if form.is_valid():
+            headline = form.cleaned_data['headline']
+            result = detect_fake_news(headline)
+    else:
+        form = NewsForm()
+
+    return render(request, "fake_news_checker.html", {"form": form, "result": result})

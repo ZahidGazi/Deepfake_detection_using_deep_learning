@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <div class="container mt-4">
+    <h2>Fake News Checker</h2>
+    <form method="post" class="mt-3">
+      {% csrf_token %}
+      {{ form.as_p }}
+      <button type="submit" class="btn btn-primary">Analyze</button>
+    </form>
+
+    {% if result %}
+      <hr>
+      <h4>Result</h4>
+      <pre style="background:#f5f5f5; padding:10px;">{{ result }}</pre>
+    {% endif %}
+  </div>
+{% endblock %}
