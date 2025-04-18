@@ -1,62 +1,77 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
 body {
-    height: 100%;
+  height: 100%;
+  font-family: "Segoe UI", sans-serif;
+  background-color: #040d1a;
+  color: #ffffff;
+  line-height: 1.6;
 }
 .bg {
-    /* The image used */
-    background-image: url("/static/images/background1.png");
-  
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-  
-    /* Center and scale the image nicely */
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
+  /* The image used */
+  background-image: url("/static/images/background1.png");
 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
 
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
-section{
-    padding-top: 60px;
+.section {
+  padding: 60px 10%;
+  text-align: center;
 }
 
-.width-300{
-    width: 300px;
-    margin: auto;
-    padding: 20px;
-    box-shadow: 0 0px 9px 2px #ccc;
+.container {
+  width: 100%;
+  height: 100%;
 }
 
-.width-400{
-    width: 400px;
-    margin: auto;
-    padding: 20px;
-    margin-top: 80px;
-    margin-bottom: 150px;
-    box-shadow: 0 0px 9px 2px #ccc;
+.width-300 {
+  width: 300px;
+  margin: auto;
+  padding: 20px;
+  box-shadow: 0 0px 9px 2px #ccc;
 }
 
-.width-500{
-    width: 500px;
-    margin: auto;
-    padding: 20px;
-    box-shadow: 0 0px 9px 2px #ccc;
+.width-400 {
+  width: 400px;
+  margin: auto;
+  padding: 20px;
+  margin-top: 80px;
+  margin-bottom: 150px;
+  box-shadow: 0 0px 9px 2px #ccc;
 }
 
-#videos{
-    display: none;
+.width-500 {
+  width: 500px;
+  margin: auto;
+  padding: 20px;
+  box-shadow: 0 0px 9px 2px #ccc;
+}
+
+#videos {
+  display: none;
 }
 
 canvas {
-    position: absolute;
-    top: 0;
-    left: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 
 .preprocess {
-    padding-right: 20px;
-    padding-bottom: 50px;
+  padding-right: 20px;
+  padding-bottom: 50px;
 }
 
 #preprocessed_images {
@@ -70,36 +85,239 @@ canvas {
 }
 
 #faces_images {
-    white-space: nowrap;
-    width: auto;
-    height: 150px;
-    padding: 20px;
-    overflow-x: scroll;
-    overflow-y: hidden;
-    box-shadow: 0 0px 9px 2px #ccc;
+  white-space: nowrap;
+  width: auto;
+  height: 150px;
+  padding: 20px;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  box-shadow: 0 0px 9px 2px #ccc;
 }
 
 .faces {
-    padding-right: 20px;
-    padding-bottom: 50px;
+  padding-right: 20px;
+  padding-bottom: 50px;
 }
 
-#heatmap_images{
-    white-space: nowrap;
-    width: auto;
-    height: 200px;
-    padding: 20px;
-    overflow-x: scroll;
-    overflow-y: hidden;
-    box-shadow: 0 0px 9px 2px #ccc;
-    margin-bottom: 20px;
+#heatmap_images {
+  white-space: nowrap;
+  width: auto;
+  height: 200px;
+  padding: 20px;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  box-shadow: 0 0px 9px 2px #ccc;
+  margin-bottom: 20px;
 }
 
 .heat-map {
-    padding-right: 20px;
-    padding-bottom: 50px;
+  padding-right: 20px;
+  padding-bottom: 50px;
 }
 
 /* span.spinner-border {
     display: none;
 } */
+
+/* Header Styles */
+.custom-navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 10%;
+  background: #000814;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo img {
+  height: 30px;
+}
+
+.nav-links a {
+  margin-left: 30px;
+  font-weight: 500;
+  color: #7fc9ff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: #00e0ff;
+}
+
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+  }
+}
+
+/* main Styles */
+
+main {
+  background: linear-gradient(to bottom, #040d1a, #091f2f);
+}
+
+.hero {
+  display: flex;
+  text-align: center;
+  padding: 80px 0 40px;
+  /* height: 100%; */
+  flex-direction: column;
+  align-content: center;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero h1 {
+  font-size: 2.5rem;
+}
+
+.highlight-blue {
+  color: #00e0ff;
+}
+
+.highlight-purple {
+  color: #bc6ff1;
+}
+
+.hero p {
+  margin-top: 20px;
+  font-size: 1.1rem;
+  color: #ccc;
+  max-width: 700px;
+  margin-inline: auto;
+}
+
+.hero button {
+  margin-top: 30px;
+  padding: 12px 25px;
+  background-color: #00e0ff;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  color: #000;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.hero button:hover {
+  background-color: #00b8cc;
+}
+
+.section h2 {
+  font-size: 2rem;
+  margin-bottom: 30px;
+  color: #00e0ff;
+}
+
+.tool-panels {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+}
+
+.panel {
+  background: rgba(255, 255, 255, 0.04);
+  padding: 25px;
+  border-radius: 12px;
+  width: 320px;
+  box-shadow: 0 0 10px #00e0ff33;
+}
+
+.panel button {
+  padding: 10px 20px;
+  background: #00e0ff;
+  color: #000;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.panel button:hover {
+  background-color: #00b8cc;
+}
+
+.features-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.feature-box {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid #00e0ff22;
+  border-radius: 10px;
+  padding: 25px;
+  width: 280px;
+  box-shadow: 0 0 8px #00e0ff33;
+}
+
+.feature-box h3 {
+  margin-bottom: 10px;
+  color: #7fc9ff;
+}
+
+.feature-box p {
+  font-size: 0.95rem;
+  color: #ccc;
+}
+
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 1.8rem;
+  }
+
+  .feature-box,
+  .panel {
+    width: 100%;
+  }
+}
+
+/* Footer Styles */
+
+.footer {
+  width: 100%;
+  background-color: #081f3b;
+  padding: 20px 0;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+.footer a {
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer a:hover {
+  color: #00e0ff;
+}
+
+/* slider Styles */
+#slider {
+  height: 12px;
+  background-color: #00e0ff;
+  border-radius: 5px;
+}
+.ui-slider-handle {
+  background-color: #00e0ff;
+  border: none;
+  border-radius: 50%;
+  width: 14px;
+  height: 14px;
+  top: -4px;
+  cursor: pointer;
+}

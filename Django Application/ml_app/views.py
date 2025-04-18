@@ -27,7 +27,7 @@ from .fake_news_utils import detect_fake_news
 from .forms import NewsForm
 
 
-index_template_name = 'index.html'
+index_template_name = 'deepfake.html'
 predict_template_name = 'predict.html'
 about_template_name = "about.html"
 
@@ -216,7 +216,13 @@ def allowed_video_file(filename):
         return True
     else: 
         return False
+    
+
 def index(request):
+    return render(request, "home.html")
+
+
+def deepfake(request):
     if request.method == 'GET':
         video_upload_form = VideoUploadForm()
         if 'file_name' in request.session:

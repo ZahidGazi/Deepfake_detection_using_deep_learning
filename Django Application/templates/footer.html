@@ -1,8 +1,14 @@
-<footer class="footer">
-    <div class="container">
-      <center><span class="text-muted" >Copyright @ {%now 'Y'%}</span></center>
-      <!-- <a href="{% url 'ml_app:home'%}">Home</a>
-      <a href="{% url 'ml_app:about'%}">About</a>
-      <a href="#">Github Link</a> -->
+<footer class="footer text-light pt-5 pb-3">
+  <div class="container text-center">
+    <div class="mb-2">
+      <strong>TruthGuard</strong> &mdash; Fighting misinformation with AI
     </div>
-  </footer>
+    <div class="mb-2">
+      <a href="{% url 'ml_app:home' %}" class="text-light mx-2">Home</a>
+      <a href="{% url 'ml_app:fake_news' %}" class="text-light mx-2">Fake News</a>
+      <a href="{% url 'ml_app:predict' %}" class="text-light mx-2">Deepfake Check</a>
+      <!-- <a href="#" class="text-light mx-2">GitHub</a> -->
+    </div>
+    <small class="text-muted">&copy; {% now 'Y' %} TruthGuard. All rights reserved.</small>
+  </div>
+</footer>

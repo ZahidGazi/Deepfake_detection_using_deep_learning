@@ -1,0 +1,65 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+  <section class="hero">
+    <h1>
+      Detect <span class="highlight-blue">Fake News</span> and
+      <span class="highlight-purple">Deepfakes</span> Accurately
+    </h1>
+    <p>
+      TruthGuard uses advanced AI models to detect fake news from text or
+      URLs, and analyze videos for deepfake content.
+    </p>
+    <button onclick="document.getElementById('detection').scrollIntoView({ behavior: 'smooth' });">
+      Try it now
+    </button>
+  </section>
+
+  <section class="section" id="detection">
+    <h2>Detection Tools</h2>
+    <div class="tool-panels">
+      <div class="panel">
+        <h3>Fake News Detection</h3>
+        <p style="color:#ccc;">Analyze any headline with LLM + source verification.</p>
+        <a href="{% url 'ml_app:fake_news' %}">
+          <button>Go to Fake News Detection</button>
+        </a>
+      </div>
+      <div class="panel">
+        <h3>Deepfake Analysis</h3>
+        <p style="color:#ccc;">Upload a video and check for manipulations.</p>
+        <a href="{% url 'ml_app:deepfake' %}">
+          <button>Go to Video Checker</button>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="features">
+    <h2>How It Works</h2>
+    <div class="features-row">
+      <div class="feature-box">
+        <h3>Fake News Analysis</h3>
+        <p>Uses LLaMA-3 language model to evaluate the credibility of news content.</p>
+      </div>
+      <div class="feature-box">
+        <h3>Source Verification</h3>
+        <p>Cross-checks headlines using Google News API against top sources.</p>
+      </div>
+      <div class="feature-box">
+        <h3>Deepfake Detection</h3>
+        <p>Analyzes video frames using pre-trained deep learning models.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="about">
+    <h2>About TruthGuard</h2>
+    <p style="max-width: 700px; margin: 0 auto; font-size: 1rem; color: #bbb">
+      TruthGuard is a project built to identify misinformation in news
+      articles and manipulated content in videos. It combines LLMs and deep
+      learning to provide accurate results based on your input.
+    </p>
+  </section>
+{% endblock %}
